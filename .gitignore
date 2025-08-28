@@ -1,0 +1,13 @@
+﻿# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Logs e relatórios
+/reports/
+/backtests/whylogs/
+/interface/logs/
+
+# IDE
+.vscode/

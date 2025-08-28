@@ -1,0 +1,31 @@
+version: 2025.08.28
+cluster:
+  symbols: ["BTCUSDT"]
+  timeframe: "1m"
+  run_id_prefix: "kz_run"
+  max_steps: 120          # sim curta
+  rate_limit_ms: 150      # atraso entre barras em sim
+data:
+  source: "csv"
+  csv_dir: "data/csv"
+  file_pattern: "{symbol}_{timeframe}.csv"
+broker:
+  adapter: "paper"        # paper | replay | binance_ccxt | okx_ccxt | ib | mt5
+  paper:
+    fee_bps: 3            # 0.03% por trade (simples)
+risk:
+  max_drawdown: 0.05
+  daily_loss_limit: 0.02
+  exposure_cap_total: 0.20
+  per_trade_risk_cap: 0.005
+  cooldown_after_losses: 3
+  cooldown_minutes: 30
+  vol_gate_quantile: 0.9
+strategy:
+  experts: ["momentum","meanrev"]
+  regime:
+    use: true
+    window: 200
+    vol_window: 20
+report:
+  html_samples: 12

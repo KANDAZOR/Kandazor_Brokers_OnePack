@@ -2,7 +2,7 @@
 Pipeline CLI para rodar a simulação/replay em terminal.
 """
 import argparse
-from runtime.actors import run_pipeline
+from src.runtime.actors import run_pipeline
 from src.telemetry.report_html import generate
 import os, glob
 

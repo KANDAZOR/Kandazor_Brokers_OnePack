@@ -2,7 +2,7 @@
 Gera relatório do whylog mais recente (último arquivo em backtests/whylogs).
 """
 import glob, os
-from telemetry.report_html import generate
+from src.telemetry.report_html import generate
 
 def main():
     files = glob.glob(os.path.join("backtests","whylogs","*.jsonl"))
